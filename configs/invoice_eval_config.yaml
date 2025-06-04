@@ -1,0 +1,58 @@
+fields:
+  client_name:
+    match_type: fuzzy
+    threshold: 90
+  client_address:
+    match_type: partial_fuzzy
+    threshold: 85
+  seller_name:
+    match_type: fuzzy
+    threshold: 90
+  seller_address:
+    match_type: partial_fuzzy
+    threshold: 85
+  invoice_number:
+    match_type: exact
+  invoice_date:
+    match_type: exact
+  tax:
+    match_type: exact
+  discount:
+    match_type: exact
+  total:
+    match_type: exact
+  # item_1_description:
+  #   match_type: partial_fuzzy
+  #   threshold: 85
+  # item_1_quantity:
+  #   match_type: exact
+  # item_1_total_price:
+  #   match_type: exact
+  # item_2_description:
+  #   match_type: partial_fuzzy
+  #   threshold: 85
+  # item_2_quantity:
+  #   match_type: exact
+  # item_2_total_price:
+  #   match_type: exact
+  # item_3_description:
+  #   match_type: partial_fuzzy
+  #   threshold: 85
+  # item_3_quantity:
+  #   match_type: exact
+  # item_3_total_price:
+  #   match_type: exact
+  # item_4_description:
+  #   match_type: partial_fuzzy
+  #   threshold: 85
+  # item_4_quantity:
+  #   match_type: exact
+  # item_4_total_price:
+  #   match_type: exact
+  # item_5_description:
+  #   match_type: partial_fuzzy
+  #   threshold: 85
+  # item_5_quantity:
+  #   match_type: exact
+  # item_5_total_price:
+  #   match_type: exact

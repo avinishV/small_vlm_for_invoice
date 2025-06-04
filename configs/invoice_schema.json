@@ -1,0 +1,74 @@
+{
+  "client_name": {
+    "description": "The full name of the client or customer to whom the invoice is issued. Look for labels such as 'Client', 'Bill To', or 'Customer'."
+  },
+  "client_address": {
+    "description": "The complete address of the client or customer, including street, city, state, and postal code. Usually found near the client name."
+  },
+  "seller_name": {
+    "description": "The full name of the seller, vendor, or company issuing the invoice. Look for labels such as 'Seller', 'From', or 'Supplier'."
+  },
+  "seller_address": {
+    "description": "The complete address of the seller or company issuing the invoice, including street, city, state, and postal code. Usually found near the seller name."
+  },
+  "invoice_number": {
+    "description": "The unique invoice number assigned to this document. Look for labels such as 'Invoice No', 'Invoice Number', or similar."
+  },
+  "invoice_date": {
+    "description": "The date when the invoice was issued. Look for labels such as 'Invoice Date', 'Date of Issue', or similar."
+  },
+  "tax": {
+    "description": "The total tax amount applied to the invoice. Look for a summary section or a line labeled 'Tax', 'VAT', or 'Sales Tax'."
+  },
+  "discount": {
+    "description": "The total discount amount applied to the invoice, if any. Look for a summary section or a line labeled 'Discount'."
+  },
+  "total": {
+    "description": "The grand total amount due for the invoice, after taxes and discounts. Look for a summary section or a line labeled 'Total', 'Amount Due', or 'Grand Total'."
+  },
+  "item_1_description": {
+    "description": "The description of the first item or product listed in the invoice's itemized section. This may include product name, model, or details."
+  },
+  "item_1_quantity": {
+    "description": "The quantity or number of units for the first item listed in the invoice's itemized section."
+  },
+  "item_1_total_price": {
+    "description": "The total price for the first item, including any taxes or discounts applied to that line."
+  },
+  "item_2_description": {
+    "description": "The description of the second item or product listed in the invoice's itemized section."
+  },
+  "item_2_quantity": {
+    "description": "The quantity or number of units for the second item listed in the invoice's itemized section."
+  },
+  "item_2_total_price": {
+    "description": "The total price for the second item, including any taxes or discounts applied to that line."
+  },
+  "item_3_description": {
+    "description": "The description of the third item or product listed in the invoice's itemized section."
+  },
+  "item_3_quantity": {
+    "description": "The quantity or number of units for the third item listed in the invoice's itemized section."
+  },
+  "item_3_total_price": {
+    "description": "The total price for the third item, including any taxes or discounts applied to that line."
+  },
+  "item_4_description": {
+    "description": "The description of the fourth item or product listed in the invoice's itemized section."
+  },
+  "item_4_quantity": {
+    "description": "The quantity or number of units for the fourth item listed in the invoice's itemized section."
+  },
+  "item_4_total_price": {
+    "description": "The total price for the fourth item, including any taxes or discounts applied to that line."
+  },
+  "item_5_description": {
+    "description": "The description of the fifth item or product listed in the invoice's itemized section."
+  },
+  "item_5_quantity": {
+    "description": "The quantity or number of units for the fifth item listed in the invoice's itemized section."
+  },
+  "item_5_total_price": {
+    "description": "The total price for the fifth item, including any taxes or discounts applied to that line."
+  }
+}
