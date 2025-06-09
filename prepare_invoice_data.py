@@ -3,8 +3,9 @@ import json
 import random
 import yaml
 
+select_random_field = False
 # Load the original data
-input_path = "./data/batch1_1.csv"
+input_path =  "../batch_1/batch_1/batch1_1.csv"
 df = pd.read_csv(input_path)
 
 # Load fields from YAML config
@@ -14,23 +15,11 @@ with open("./configs/invoice_eval_config.yaml", "r") as f:
 all_fields = list(fields.keys())
 print("all_fields: ", all_fields)
 
-# Helper to extract item fields
-def extract_item_fields(items, max_items=5):
-    result = {}
-    for i in range(max_items):
-        idx = i + 1
-        if i < len(items):
-            item = items[i]
-            result[f"item_{idx}_description"] = item.get("description", "")
-            result[f"item_{idx}_quantity"] = item.get("quantity", "")
-            result[f"item_{idx}_total_price"] = item.get("total_price", "")
-        else:
-            result[f"item_{idx}_description"] = ""
-            result[f"item_{idx}_quantity"] = ""
-            result[f"item_{idx}_total_price"] = ""
-    return result
 
 rows = []
+#iterate over df to parse ground truth and
+#extract requested_parameters based on config but option to make it dynamic
+#extract gt for requested_parameters as requested_data
 for idx, row in df.iterrows():
     json_data = row['Json Data']
     try:
@@ -64,14 +53,22 @@ for idx, row in df.iterrows():
             else:
                 flat[field] = ""
                 
+    
+
     # Randomly select 7 to all fields (majority with more fields)
     if random.random() < 0.7:
         n_fields = random.randint(7, len(all_fields))
     else:
         n_fields = random.randint(3, 6)
+
+    # select all fields as in invoice_eval_config
+    if not select_random_field:
+        n_fields = len(all_fields)
+        
     requested = sorted(random.sample(all_fields, n_fields))
     requested_data = {k: flat[k] for k in requested}
     rows.append({
+        "file_name": row["File Name"],
         "invoice_no": flat.get("invoice_number", ""),
         "requested_parameters": json.dumps(requested),
         "requested_data": json.dumps(requested_data)

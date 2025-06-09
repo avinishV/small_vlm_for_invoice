@@ -25,8 +25,9 @@ def get_invoice_extraction_prompt(fields: List[str], schema_path: str) -> str:
         schema_path: Path to the schema JSON file with field descriptions.
     """
     schema = load_schema(schema_path)
+    print("schema: "schema)
     prompt_lines = [
-        "Extract the following fields from the invoice image. For each field, follow the extraction instructions:",
+        "Extract the following fields from the invoice image and return the response in json format. For each field, follow the extraction instructions:",
         ""
     ]
     for field in fields:
@@ -34,7 +35,7 @@ def get_invoice_extraction_prompt(fields: List[str], schema_path: str) -> str:
         prompt_lines.append(f"- {field}: {desc}")
     prompt_lines.append("")
     prompt_lines.append(
-        "Instructions:\n"
+        "Guidelines:\n"
         "1. Carefully read the invoice image and locate each field as described above.\n"
         "2. If a field is missing or not present, return an empty string for that field.\n"
         "3. For item fields (e.g., item_1_description, item_2_quantity), extract the information for each item in the order they appear in the invoice.\n"
@@ -45,4 +46,16 @@ def get_invoice_extraction_prompt(fields: List[str], schema_path: str) -> str:
         "8. For numberic values, extract only the numeric part (e.g., 809.62) and preserve the original formatting for decimals and thousand separators if present (e.g., 1,234.56 or 809,62)"
         "9. Double-check that all required fields are present in your output."
     )
+    prompt_lines.append("""
+        Example json response:
+        {
+            "invoice_no": 237387473,
+            "discount": 8774.45,
+            .
+            .
+            .
+        }
+    
+    
+    """)
     return "\n".join(prompt_lines)
