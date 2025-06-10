@@ -1,0 +1,7 @@
+transformers 
+trl 
+datasets 
+bitsandbytes 
+peft 
+accelerate
+tensorboardX
