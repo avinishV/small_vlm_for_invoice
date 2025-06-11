@@ -1,9 +1,9 @@
-# Invoice Data Extraction Workflow
+# Invoice Data Extraction
 
-This project is to quickly benchmark VLMs (small and finetuned one). The workflow includes dynamic data preparation based on config, prompt generation, and evaluation against ground truth data.
+This project is to quickly benchmark VLMs and finetune small VLM for invoice data extraction. The workflow includes dynamic data preparation based on config, prompt generation, and evaluation against ground truth data.
 
-Dataset being used -> 
-VLM model to test first -> 
+Dataset being used -> https://www.kaggle.com/datasets/osamahosamabdellatif/high-quality-invoice-images-for-ocr
+VLM model to test first -> HuggingFaceTB/SmolVLM-500M-Instruct
 
 ## File Structure
 
@@ -19,6 +19,11 @@ VLM model to test first ->
 - **Evaluation**:
   - `invoice_evaluate_response.py`: Script for evaluating extracted data.
   - `configs/invoice_eval_config.yaml`: Configuration file for evaluation rules.
+  
+- **LLM Finetuning**:
+  - includes code to fine tune Small VLM using HuggingFace Transformer 
+      - on single GPU using llm_finetuning/smolvlm-trl-invoice.ipynb script
+      - on distrubted GPU using PyTorch accelerate. Refer Readme.md file there. 
 
 ## How to Run
 
