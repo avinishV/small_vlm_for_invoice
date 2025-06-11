@@ -26,35 +26,35 @@ VLM model to test first -> HuggingFaceTB/SmolVLM-500M-Instruct
       - on distrubted GPU using PyTorch accelerate. Refer Readme.md file there. 
 
 
-## Finetuning results on HuggingFaceTB/SmolVLM-500M-Instruct
-1. Finetuned on batch_1/batch_1/batch1_2 invoices and evaluated on batch_1/batch_1/batch1_1 invoices
-2. Initial result on full precision model. Refer Kaggle notebook for details - https://www.kaggle.com/code/vermaavi/invoice-data-extraction-using-smolvlm#field-wise-accuracy
+## Finetuning results on HuggingFaceTB/SmolVLM-500M-Instruct</br>
+1. Finetuned on batch_1/batch_1/batch1_2 invoices and evaluated on batch_1/batch_1/batch1_1 invoices</br>
+2. Initial result on full precision model. Refer Kaggle notebook for details - https://www.kaggle.com/code/vermaavi/invoice-data-extraction-using-smolvlm#field-wise-accuracy</br>
 
-    Overall accuracy = 51.8%
-    --------field wise-------
-    client_name       0.567134
-    client_address    0.629259
-    seller_name       0.589178
-    seller_address    0.641283
-    invoice_number    0.993988
-    invoice_date      0.997996
-    tax               0.000000
-    discount          0.000000
-    total             0.236473
+    Overall accuracy = 51.8% </br>
+    --------field wise-------</br>
+    client_name       0.567134</br>
+    client_address    0.629259</br>
+    seller_name       0.589178</br>
+    seller_address    0.641283</br>
+    invoice_number    0.993988</br>
+    invoice_date      0.997996</br>
+    tax               0.000000</br>
+    discount          0.000000</br>
+    total             0.236473</br>
  
-3. Finetuned 8-bit quantised model accuracy. Refer invoice_data_extraction notebook. 
+3. Finetuned 8-bit quantised model accuracy. Refer invoice_data_extraction notebook. </br>
     
-    Overall accuracy = 98.7%
-    --------field wise-------
-    client_name       0.987976
-    client_address    0.993988
-    seller_name       0.989980
-    seller_address    0.989980
-    invoice_number    0.985972
-    invoice_date      0.997996
-    tax               0.971944
-    discount          0.997996
-    total             0.949900
+    Overall accuracy = 98.7%</br>
+    --------field wise-------</br>
+    client_name       0.987976</br>
+    client_address    0.993988</br>
+    seller_name       0.989980</br>
+    seller_address    0.989980</br>
+    invoice_number    0.985972</br>
+    invoice_date      0.997996</br>
+    tax               0.971944</br>
+    discount          0.997996</br>
+    total             0.949900</br>
 
 ## How to Run
 
