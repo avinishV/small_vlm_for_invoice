@@ -5,7 +5,12 @@ import yaml
 
 select_random_field = False
 # Load the original data
-input_path =  "../batch_1/batch_1/batch1_1.csv"
+input_path =  "../batch_1/batch_1/batch1_2.csv"
+output_csv = "./data/prepared_invoice_data_batch1_2.csv"
+
+# input_path =  "../batch_1/batch_1/batch1_1.csv"
+# output_csv = "./data/prepared_invoice_data_batch.csv"
+
 df = pd.read_csv(input_path)
 
 # Load fields from YAML config
@@ -75,5 +80,5 @@ for idx, row in df.iterrows():
     })
 
 out_df = pd.DataFrame(rows)
-out_df.to_csv("./data/prepared_invoice_data.csv", index=False)
+out_df.to_csv(output_csv, index=False)
 print("Saved prepared_invoice_data.csv with dynamic requested fields including item-level fields.")
