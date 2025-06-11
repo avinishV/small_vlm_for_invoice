@@ -25,7 +25,6 @@ For Single GPU:</br>
   - With Batch size of 4 and gradient_accumulation_steps 4, it takes around 21GB of RAM. </br>
  
 For distributed training on multiple GPU:</br>
-  - I have used PyTorch accelerate and HuggingFace TRL. Refer Readme.md file there. </br>
   - Use below  command to launch training job: </br>
     accelerate launch --config_file hf_accelerate_config.yaml run_vlm_sft_distributed.py --config smolvlm-qlora.yaml
     </br>
