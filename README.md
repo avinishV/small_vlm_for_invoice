@@ -2,7 +2,7 @@
 
 This project is to quickly benchmark VLMs and finetune small VLM for invoice data extraction. The workflow includes dynamic data preparation based on config, prompt generation, and evaluation against ground truth data.
 
-Dataset being used -> https://www.kaggle.com/datasets/osamahosamabdellatif/high-quality-invoice-images-for-ocr
+Dataset being used -> https://www.kaggle.com/datasets/osamahosamabdellatif/high-quality-invoice-images-for-ocr  </br>
 VLM model to test first -> HuggingFaceTB/SmolVLM-500M-Instruct
 
 ## File Structure
