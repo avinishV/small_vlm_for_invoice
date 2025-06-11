@@ -25,6 +25,37 @@ VLM model to test first -> HuggingFaceTB/SmolVLM-500M-Instruct
       - on single GPU using llm_finetuning/smolvlm-trl-invoice.ipynb script
       - on distrubted GPU using PyTorch accelerate. Refer Readme.md file there. 
 
+
+## Finetuning results on HuggingFaceTB/SmolVLM-500M-Instruct
+1. Finetuned on batch_1/batch_1/batch1_2 invoices and evaluated on batch_1/batch_1/batch1_1 invoices
+2. Initial result on full precision model. Refer Kaggle notebook for details - https://www.kaggle.com/code/vermaavi/invoice-data-extraction-using-smolvlm#field-wise-accuracy
+
+    Overall accuracy = 51.8%
+    --------field wise-------
+    client_name       0.567134
+    client_address    0.629259
+    seller_name       0.589178
+    seller_address    0.641283
+    invoice_number    0.993988
+    invoice_date      0.997996
+    tax               0.000000
+    discount          0.000000
+    total             0.236473
+ 
+3. Finetuned 8-bit quantised model accuracy. Refer invoice_data_extraction notebook. 
+    
+    Overall accuracy = 98.7%
+    --------field wise-------
+    client_name       0.987976
+    client_address    0.993988
+    seller_name       0.989980
+    seller_address    0.989980
+    invoice_number    0.985972
+    invoice_date      0.997996
+    tax               0.971944
+    discount          0.997996
+    total             0.949900
+
 ## How to Run
 
 1. **Prepare Data**:
